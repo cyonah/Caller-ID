@@ -63,4 +63,10 @@
     <string name="home_privacy_title">Your calls, your choices</string>
     <string name="home_privacy_description">Review call screening, spam blocking and caller popup preferences in Settings.</string>
     <string name="home_login_cta">Continue with phone number</string>
+    <string name="lookup_eyebrow">NUMBER LOOKUP</string>
+    <string name="lookup_headline">Search a number.</string>
+    <string name="lookup_subtitle">Find caller details and check whether a number has been reported as spam.</string>
+    <string name="lookup_input_helper">Include the country code when searching an international number.</string>
+    <string name="clear_search">Clear number</string>
+    <string name="caller_profile_photo">Caller profile photo</string>
 </resources>
