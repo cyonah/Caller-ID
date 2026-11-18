@@ -55,7 +55,7 @@
     <string name="home_headline">Know who's calling.</string>
     <string name="home_subtitle">A clearer view of incoming calls, with useful tools close at hand.</string>
     <string name="home_status_label">YOUR CALLER ID SPACE</string>
-    <string name="home_status_title">Your account is connected</string>
+    <string name="home_status_title">Caller ID, in one place</string>
     <string name="home_status_description">Look up a number or fine-tune how Caller Identity handles incoming calls.</string>
     <string name="home_tools_heading">Your tools</string>
     <string name="home_search_action">Search number</string>
