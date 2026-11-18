@@ -1,143 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screen_background"
     tools:context=".activities.SearchActivity">
 
     <include
         android:id="@+id/toolbar_include"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_height="wrap_content" />
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_include"
-        android:padding="10dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingStart="20dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="28dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/background_input_number_container"
-            android:id="@+id/inputBoxContainer"
-            android:layout_alignParentTop="true"
-            android:paddingHorizontal="10dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/clearBtn"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/round_transparent_ripple_button"
-                android:contentDescription="clear"
-                android:padding="10dp"
-                android:src="@drawable/clear_24"
-                app:tint="?attr/colorPrimary"
-                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+                android:text="@string/lookup_eyebrow"
+                android:textColor="@color/brand_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12" />
 
-            <EditText
-                android:id="@+id/inputPhoneNumberET"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toEndOf="@id/clearBtn"
-                android:layout_alignParentEnd="true"
-                android:importantForAutofill="no"
-                android:paddingHorizontal="10dp"
-                android:hint="@string/search_number"
-                android:inputType="phone"
-                android:background="@null"
-                tools:ignore="VisualLintTextFieldSize" />
-
-        </RelativeLayout>
-
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/loaderProgressBar"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_centerInParent="true" />
-
-        <RelativeLayout
-            android:id="@+id/numberInfoCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/inputBoxContainer"
-            android:background="@drawable/background_caller_search_card_normal"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="15dp"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"
-            tools:ignore="HardcodedText">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/callerProfileIV"
-                android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:contentDescription="Profile DP"
-                android:src="@drawable/verified_user_24"
-                android:background="@color/white"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                app:shapeAppearanceOverlay="@style/CircleImageViewStyle"
-                android:adjustViewBounds="true"/>
+                android:layout_marginTop="8dp"
+                android:text="@string/lookup_headline"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/callerNameTV"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Benojir Sultana"
-                android:layout_below="@+id/callerProfileIV"
-                android:layout_centerHorizontal="true"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/white"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="22dp"
+                android:text="@string/lookup_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="3dp" />
+
+            <LinearLayout
+                android:id="@+id/inputBoxContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="64dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/background_input_number_container"
+                android:elevation="1dp">
+
+                <ImageButton
+                    android:id="@+id/clearBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/round_transparent_ripple_button"
+                    android:contentDescription="@string/clear_search"
+                    android:padding="12dp"
+                    android:src="@drawable/clear_24"
+                    app:tint="@color/text_secondary" />
+
+                <EditText
+                    android:id="@+id/inputPhoneNumberET"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:importantForAutofill="no"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:hint="@string/search_number"
+                    android:inputType="phone"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textColorHint="@color/text_secondary"
+                    android:background="@null"
+                    tools:ignore="VisualLintTextFieldSize" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/phoneNumberTV"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="+911234567890"
-                android:layout_below="@+id/callerNameTV"
-                android:layout_centerHorizontal="true"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:text="@string/lookup_input_helper"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/callerLocationTV"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="West Bengal, India"
-                android:layout_below="@+id/phoneNumberTV"
-                android:layout_centerHorizontal="true"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_marginTop="10dp" />
+                android:minHeight="70dp">
 
-            <TextView
-                android:id="@+id/spamInfoTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="☠️ Spam number (TOP SPAMMER)"
-                android:layout_below="@+id/callerLocationTV"
-                android:layout_centerHorizontal="true"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:visibility="gone"
-                android:background="@drawable/background_spam_warning_text"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="10dp"
-                android:layout_marginTop="10dp" />
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/loaderProgressBar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/brand_primary"
+                    android:visibility="gone" />
 
-        </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/numberInfoCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_caller_search_card_normal"
+                    android:padding="20dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
-    </RelativeLayout>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/callerProfileIV"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/card_surface"
+                        android:contentDescription="@string/caller_profile_photo"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/verified_user_24"
+                        app:shapeAppearanceOverlay="@style/CircleImageViewStyle" />
 
-</RelativeLayout>
+                    <TextView
+                        android:id="@+id/callerNameTV"
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/callerProfileIV"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:text="Caller name" />
+
+                    <TextView
+                        android:id="@+id/phoneNumberTV"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/callerNameTV"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        tools:text="+1 234 567 890" />
+
+                    <TextView
+                        android:id="@+id/callerLocationTV"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phoneNumberTV"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center"
+                        android:textColor="#E0F2EF"
+                        tools:text="United States" />
+
+                    <TextView
+                        android:id="@+id/spamInfoTV"
+                        style="@style/TextAppearance.Material3.LabelLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/callerLocationTV"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/background_spam_warning_text"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="8dp"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        tools:text="Spam number (high risk)"
+                        tools:visibility="visible" />
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
