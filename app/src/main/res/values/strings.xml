@@ -50,5 +50,17 @@
     <string name="today_call_logs_header">Today</string>
     <string name="yesterday_call_logs_header">Yesterday</string>
     <string name="older_call_logs_header">Older</string>
-    <string name="app_description_short">Caller Identity offers efficient caller ID and spam blocking via Truecaller\'s API.</string>
+    <string name="app_description_short">Caller ID and call protection to help you answer with confidence.</string>
+    <string name="home_eyebrow">CALLER IDENTITY</string>
+    <string name="home_headline">Know who's calling.</string>
+    <string name="home_subtitle">A clearer view of incoming calls, with useful tools close at hand.</string>
+    <string name="home_status_label">YOUR CALLER ID SPACE</string>
+    <string name="home_status_title">Your account is connected</string>
+    <string name="home_status_description">Look up a number or fine-tune how Caller Identity handles incoming calls.</string>
+    <string name="home_tools_heading">Your tools</string>
+    <string name="home_search_action">Search number</string>
+    <string name="home_settings_action">Settings</string>
+    <string name="home_privacy_title">Your calls, your choices</string>
+    <string name="home_privacy_description">Review call screening, spam blocking and caller popup preferences in Settings.</string>
+    <string name="home_login_cta">Continue with phone number</string>
 </resources>
